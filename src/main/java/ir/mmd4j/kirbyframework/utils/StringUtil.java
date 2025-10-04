@@ -1,19 +1,17 @@
 package ir.mmd4j.kirbyframework.utils;
 
-import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@UtilityClass
 public class StringUtil {
     /**
      * a shorter version of ChatColor.translateAlternateColorCodes('&',text)
      * @param text the text trying to translate its color
      * @return
      */
-    public String t(String text) {
+    public static String t(String text) {
         return ChatColor.translateAlternateColorCodes('&', text);
     }
 
@@ -23,7 +21,7 @@ public class StringUtil {
      * @param words list of possible words to complete
      * @return
      */
-    public List<String> completedWords(String word, List<String> words) {
+    public static List<String> completedWords(String word, List<String> words) {
         return words.stream().filter(w -> w.toLowerCase().startsWith(word.toLowerCase())).map(String::toLowerCase)
                 .map(w -> w.substring(word.length())).collect(Collectors.toList());
     }
@@ -34,7 +32,7 @@ public class StringUtil {
      * @param words possible wordlist
      * @return
      */
-    public List<String> listWordsStartWith(String word, List<String> words) {
+    public static List<String> listWordsStartWith(String word, List<String> words) {
         return words.stream().filter(w -> w.toLowerCase().startsWith(word.toLowerCase())).map(String::toLowerCase)
                 .collect(Collectors.toList());
     }
