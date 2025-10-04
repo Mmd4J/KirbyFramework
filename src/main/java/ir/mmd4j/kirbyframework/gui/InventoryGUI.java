@@ -33,7 +33,7 @@ public class InventoryGUI implements Listener {
         this(plugin, Bukkit.createInventory(null, slots, title));
     }
 
-    public void addButton(Plugin plugin, int slot, Button button) {
+    public void addButton(int slot, Button button) {
         buttons.put(slot, button);
         inventory.setItem(slot, button);
         Bukkit.getPluginManager().registerEvents(this, plugin);
